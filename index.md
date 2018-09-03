@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+# gocover-cui
 
-You can use the [editor on GitHub](https://github.com/laojianzi/me/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Reference go tool cover -html=c.out -o coverage.html display it to the terminal
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+for example when using in docker, I can't display html, I can try to display the terminal UI.
 
-### Markdown
+    gocover-cui -cui c.out
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Install
+#### go get
+``` bash
+go get github.com/Mapana/gocover-cui
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### git
+``` bash
+git clone https://github.com/Mapana/gocover-cui.git
+cd gocover-cui
+go install
+```
 
-### Jekyll Themes
+## Key Help
+branch and manuals are provided here
+- [branch](https://github.com/Mapana/gocover-cui/tree/key-help)
+- [manuals](https://github.com/Mapana/gocover-cui/wiki)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/laojianzi/me/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Example
+``` bash
+cd $GOPATH/src/github.com/Mapana/gocover-cui
 
-### Support or Contact
+gocover-cui -cui=example/example_ls.out -log=example/example_ls.log # Can run -cui or -log separately
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+gocover-cui -cui=example/example_hs.out -log=example/example_hs.log
+```
+
+#### Focus in `Cover Files`
+![image](https://github.com/Mapana/gocover-cui/blob/master/gocover-cui-1.png)
+
+#### toggle option for `Cover Files`
+![image](https://github.com/Mapana/gocover-cui/blob/master/gocover-cui-2.png)
+
+#### Focus in `Data View`
+![image](https://github.com/Mapana/gocover-cui/blob/master/gocover-cui-3.png)
+
+## Plan
+- [x] support log display
+- [x] add keyboard prompt help
